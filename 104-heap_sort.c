@@ -68,4 +68,12 @@ void heap_sort(int *array, size_t size)
 	make_heap(array, size);
 	end = size - 1;
 	while (end > 0)
-
+	{
+		temp = array[end];
+		array[end] = array[0];
+		array[0] = temp;
+		print_array(array, size);
+		end--;
+		sift_down(array, 0, end, size);
+	}
+}
